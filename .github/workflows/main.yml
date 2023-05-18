@@ -63,11 +63,16 @@ jobs:
 
       - name: Run chmod to make gradlew executable
         run: chmod +x ./gradlew
-      
+        
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@d23c38fad3e837961b39af2b98b046694927aca4
+        uses: gradle/gradle-build-action@v2
         with:
-          arguments: bootWar -Pversion=${{ env.VERSION }}
+          gradle-version: 4.2.1
+      
+#       - name: Build with Gradle
+#         uses: gradle/gradle-build-action@d23c38fad3e837961b39af2b98b046694927aca4
+#         with:
+#           arguments: bootWar -Pversion=${{ env.VERSION }}
 
       # ========================================================
       #
